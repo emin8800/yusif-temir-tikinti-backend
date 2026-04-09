@@ -126,24 +126,24 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 import os
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# backend/apps.py və ya signals.py içində
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.db.models.signals import post_migrate
+from django.dispatch import receiver
 
-import os
+@receiver(post_migrate)
+def create_default_superuser(sender, **kwargs):
+    import os
+    if os.environ.get("CREATE_SUPERUSER") == "True":
+        User = get_user_model()
+        username = "eminadmin"
+        password = "8800"
 
-if os.environ.get("CREATE_SUPERUSER") == "True":
-    from django.contrib.auth import get_user_model
-    User = get_user_model()
-
-    username = "eminadmin"
-    password = "8800"
-
-    if not User.objects.filter(username=username).exists():
-        User.objects.create_superuser(
-            username=username,
-            email="eminadmin@gmail.com",
-            password=password
-        )
+        if not User.objects.filter(username=username).exists():
+            User.objects.create_superuser(
+                username=username,
+                email="eminadmin@gmail.com",
+                password=password
+            )
