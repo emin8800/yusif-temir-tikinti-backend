@@ -1,6 +1,5 @@
 Django==4.2.10
-djangorestframework==3.20.1
-Pillow==10.0.1              # şəkillərlə işləmək üçün
-gunicorn==21.2.0            # production server
-psycopg2-binary==2.9.9      # PostgreSQL istifadə etsən (SQLite defaultdırsa lazım deyil)
-sqlparse==0.4.5             # Django migrations üçün
+djangorestframework==3.17.1
+Pillow==10.0.1
+gunicorn==21.2.0
+sqlparse==0.4.5
