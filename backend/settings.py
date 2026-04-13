@@ -28,11 +28,7 @@ SECRET_KEY = 'django-insecure-x1^6sw(@^v$a6o&3v2h1+#b17_8swbpo@0ctr_6)rca!yczoyf
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    ".onrender.com",
-    ".fly.dev",
-    "yusif-temir-tikinti-backend.fly.dev"
+    "*"
 ]
 
 # Application definition
