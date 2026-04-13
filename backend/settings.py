@@ -136,6 +136,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Render üçün düzgün y
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 import os
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
 # backend/apps.py və ya signals.py içində
 
 from django.conf import settings
