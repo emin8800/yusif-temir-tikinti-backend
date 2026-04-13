@@ -1,5 +1,6 @@
 # fly.toml app configuration file
-
+[deploy]
+release_command = "python manage.py migrate --noinput"
 app = "yusif-temir-tikinti-backend"
 primary_region = "ams"
 console_command = "/code/manage.py shell"
