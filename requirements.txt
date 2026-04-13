@@ -1,6 +1,6 @@
 Django>=4.2,<5
 djangorestframework>=3.17,<4
-Pillow>=10.0,<11
+Pillow
 gunicorn==21.2.0
 sqlparse
 django-cors-headers>=4.0
