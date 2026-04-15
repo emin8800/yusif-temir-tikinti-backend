@@ -6,3 +6,5 @@ sqlparse
 django-cors-headers
 whitenoise
 psycopg2-binary
+requests
+django-filter
