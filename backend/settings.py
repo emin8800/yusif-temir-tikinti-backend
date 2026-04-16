@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'works',
+    'cloudinary',
+'cloudinary_storage',
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 MIDDLEWARE = [
@@ -175,3 +177,16 @@ def create_default_superuser(sender, **kwargs):
                 email="eminadmin@gmail.com",
                 password=password
             )
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config(
+    cloud_name='dhjopfxr4',
+    api_key='651694191783876',
+    api_secret='w0oarB5oCgB0MVaIjg823F_C9TU'
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
