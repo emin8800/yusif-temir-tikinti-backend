@@ -154,8 +154,6 @@ REST_FRAMEWORK = {
 
 import os
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # backend/apps.py və ya signals.py içində
 
 from django.conf import settings
