@@ -8,3 +8,5 @@ whitenoise
 psycopg2-binary
 requests
 django-filter
+cloudinary
+django-cloudinary-storage
