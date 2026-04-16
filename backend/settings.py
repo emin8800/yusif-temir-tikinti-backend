@@ -176,10 +176,7 @@ def create_default_superuser(sender, **kwargs):
                 password=password
             )
 
-
 import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 cloudinary.config(
     cloud_name='dhjopfxr4',
@@ -187,11 +184,5 @@ cloudinary.config(
     api_secret='w0oarB5oCgB0MVaIjg823F_C9TU'
 )
 
-STORAGES = {
-    "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-    },
-}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
